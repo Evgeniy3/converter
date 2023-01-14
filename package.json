@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Evgeniy3/converter/issues"
   },
-  "homepage": "https://github.com/Evgeniy3/converter#readme"
+  "homepage": "https://github.com/Evgeniy3/converter#readme",
+  "dependencies": {
+    "axios": "^1.2.2"
+  }
 }

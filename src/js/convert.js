@@ -4,7 +4,7 @@ import variables from './variables.js';
 import { renderResult } from './view.js';
 import { getFullName, convertTime } from './utils.js'
 
-const {resultFrom, resultTo, formResults, rateLast} = variables;
+const {resultFrom, resultTo, formResults, rateLast, toSelect, fromSelect} = variables;
 
 export const handleChange = ({ target: { value, name } }) => {
     state.pair = {
@@ -59,7 +59,7 @@ export const handleSubmit = async(e) => {
       try {
         const response = await axios.get(`${url}/pair/${from}/${to}/${amount}`);
         const data = response.data
-        console.log(data);
+        
         if (data.result === success) insertResults(data);
 
     
@@ -67,4 +67,19 @@ export const handleSubmit = async(e) => {
         console.log(err);
       }
 
+}
+
+export const switchCurrencies = () => {
+  const { pair: {from, to} } = state;
+
+  if (!to || !from) return;
+
+  state.pair = {
+    from: to,
+    to: from,
+  }
+
+  toSelect.value = from;
+  fromSelect.value = to;
+  
 }

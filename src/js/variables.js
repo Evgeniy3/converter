@@ -6,5 +6,9 @@ export  default {
     resultTo: document.getElementById('resultTo'),
     formResults: document.querySelector('.form-results'),
     rateLast: document.querySelector('.rate-last'),
+    switchButton: document.querySelector(".switch-currencies"),
+    toSelect: document.getElementById("to"),
+    fromSelect: document.getElementById("from"),
+    tabs: document.querySelectorAll(".tab"),
 }
 

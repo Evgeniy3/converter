@@ -2,6 +2,7 @@ import axios from 'https://cdn.skypack.dev/axios';
 import state from "./state.js";
 import variables from './variables.js';
 import { handleChange } from './convert.js';
+import { fetchLatest } from './single.js';
 
 const renderCodesList = () => {
     variables.selects.forEach((el) => {
@@ -24,6 +25,7 @@ export const fetchCodes = async() => {
         if(data.result === state.success) {
             state.codes = data.supported_codes
             renderCodesList()
+            fetchLatest();
         }
     } catch (err) {
         console.log(err)

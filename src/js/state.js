@@ -8,5 +8,13 @@ export  default {
       },
     amount: "",
     currentTab: "convert",
+    currency: {
+      code: "USD",
+    },
+    currencies: ["USD", "EUR", "BYN"],
+    actions: {
+      remove: "remove",
+      change: "change",
+    },
 }
 
